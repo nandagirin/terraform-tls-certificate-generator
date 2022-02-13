@@ -72,5 +72,5 @@ variable "tls_cert_uris" {
 variable "generate_certs_keys_as_local_files" {
   type        = bool
   description = "If true, Terraform will generate certificates and keys as local files in relative path ./certs."
-  default     = false 
+  default     = false
 }
