@@ -1,4 +1,4 @@
-# Terraform TLS Module
+# Terraform TLS Certificate Generator Module
 
 This module handles creation of TLS keys and certificates. This module will be useful for generating a self signed certificate or providing certificate signing request for requesting a TLS certificate from public CA provider. This module is also extensible, such as adding other Terraform resources to store the generated certificates and keys or creating JKS keystores.
 The resources that this module will create are:
@@ -12,8 +12,8 @@ The resources that this module will create are:
 Example usage to generate self signed certificate with RSA algorithm:
 ```hcl
 module "tls" {
-  source  = "nandagirin/module/tls"
-  version = "1.0.1"
+  source  = "nandagirin/certificate-generator/tls"
+  version = "1.0.2"
 
   tls_private_key_algorithm = "RSA"
   tls_private_key_rsa_bits  = 2048
@@ -27,8 +27,8 @@ module "tls" {
 Example usage to generate self signed certificate with ECDSA algorithm:
 ```hcl
 module "tls" {
-  source  = "nandagirin/module/tls"
-  version = "1.0.1"
+  source  = "nandagirin/certificate-generator/tls"
+  version = "1.0.2"
 
   tls_private_key_algorithm   = "ECDSA"
   tls_private_key_ecdsa_curve = "P256"
