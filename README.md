@@ -55,6 +55,7 @@ module "tls" {
 | tls_cert_ip_addresses | List of IP addresses for which a certificate is being requested. | `list` | `[]` | no |
 | tls_cert_uris | List of URIs for which a certificate is being requested. | `list` | `[]` | no |
 | generate_certs_keys_as_local_files | If true, Terraform will generate certificates and keys as local files in relative path `./certs`. | `bool` | `false` | no |
+| generate_cert_sign_request_only | If true, Terraform will only generate certificate signing request resources. | `bool` | `false` | no |
 
 ## Outputs
 
