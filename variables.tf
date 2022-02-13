@@ -74,3 +74,9 @@ variable "generate_certs_keys_as_local_files" {
   description = "If true, Terraform will generate certificates and keys as local files in relative path ./certs."
   default     = false
 }
+
+variable "generate_cert_sign_request_only" {
+  type        = bool
+  description = "If true, Terraform will only generate certificate signing request resource."
+  default     = false
+}
