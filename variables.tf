@@ -77,6 +77,6 @@ variable "generate_certs_keys_as_local_files" {
 
 variable "generate_cert_sign_request_only" {
   type        = bool
-  description = "If true, Terraform will only generate certificate signing request resource."
+  description = "If true, Terraform will only generate certificate signing request resources."
   default     = false
 }
