@@ -28,9 +28,9 @@ Example usage to generate self signed certificate with ECDSA algorithm:
 module "tls" {
   source =  "terraform-tls-module"
 
-  tls_private_key_algorithm = "ECDSA"
-  ecdsa_curve               = "P256"
-  tls_cert_subject          = {
+  tls_private_key_algorithm   = "ECDSA"
+  tls_private_key_ecdsa_curve = "P256"
+  tls_cert_subject            = {
     common_name = "*.somedomain.io"
   }
   tls_cert_dns_names        = ["*.somedomain.io"]
