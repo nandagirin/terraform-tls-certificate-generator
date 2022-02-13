@@ -68,3 +68,9 @@ variable "tls_cert_uris" {
   description = "List of URIs for which a certificate is being requested."
   default     = []
 }
+
+variable "generate_certs_keys_as_local_files" {
+  type        = bool
+  description = "If true, Terraform will generate certificates and keys as local files in relative path ./certs."
+  default     = false 
+}

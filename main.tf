@@ -68,3 +68,36 @@ resource "tls_locally_signed_cert" "cert_signed" {
   early_renewal_hours   = var.tls_cert_early_renewal_hours
   set_subject_key_id    = var.tls_cert_set_subject_key_id
 }
+
+/*
+  Generate certificates and keys as local files
+*/
+resource "local_file" "ca_crt" {
+  count    = var.generate_certs_keys_as_local_files ? 1 : 0
+  content  = tls_self_signed_cert.ca_cert.cert_pem
+  filename = "${path.module}/certs/ca-cert.pem"
+}
+
+resource "local_file" "ca_key" {
+  count    = var.generate_certs_keys_as_local_files ? 1 : 0
+  content  = tls_private_key.ca_key.private_key_pem
+  filename = "${path.module}/certs/ca-key.pem"
+}
+
+resource "local_file" "cert_request" {
+  count    = var.generate_certs_keys_as_local_files ? 1 : 0
+  content  = tls_cert_request.cert_request.cert_request_pem
+  filename = "${path.module}/certs/cert-request.pem"
+}
+
+resource "local_file" "cert_signed" {
+  count    = var.generate_certs_keys_as_local_files ? 1 : 0
+  content  = tls_locally_signed_cert.cert_signed.cert_pem
+  filename = "${path.module}/certs/cert-signed.pem"
+}
+
+resource "local_file" "cert_key" {
+  count    = var.generate_certs_keys_as_local_files ? 1 : 0
+  content  = tls_private_key.cert_key.private_key_pem
+  filename = "${path.module}/certs/cert-key.pem"
+}
