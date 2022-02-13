@@ -12,7 +12,8 @@ The resources that this module will create are:
 Example usage to generate self signed certificate with RSA algorithm:
 ```hcl
 module "tls" {
-  source =  "terraform-tls-module"
+  source  = "nandagirin/module/tls"
+  version = "1.0.1"
 
   tls_private_key_algorithm = "RSA"
   tls_private_key_rsa_bits  = 2048
@@ -26,7 +27,8 @@ module "tls" {
 Example usage to generate self signed certificate with ECDSA algorithm:
 ```hcl
 module "tls" {
-  source =  "terraform-tls-module"
+  source  = "nandagirin/module/tls"
+  version = "1.0.1"
 
   tls_private_key_algorithm   = "ECDSA"
   tls_private_key_ecdsa_curve = "P256"
