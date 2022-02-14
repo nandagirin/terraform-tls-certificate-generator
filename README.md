@@ -13,7 +13,7 @@ Example usage to generate self signed certificate with RSA algorithm:
 ```hcl
 module "tls" {
   source  = "nandagirin/certificate-generator/tls"
-  version = "2.0.0"
+  version = "2.0.2"
 
   tls_private_key_algorithm = "RSA"
   tls_private_key_rsa_bits  = 2048
@@ -28,7 +28,7 @@ Example usage to generate only certificate signing request with ECDSA algorithm:
 ```hcl
 module "tls" {
   source  = "nandagirin/certificate-generator/tls"
-  version = "2.0.0"
+  version = "2.0.2"
 
   tls_private_key_algorithm   = "ECDSA"
   tls_private_key_ecdsa_curve = "P256"
