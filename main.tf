@@ -103,7 +103,7 @@ resource "local_file" "cert_signed" {
 }
 
 resource "local_file" "cert_key" {
-  count    = var.generate_certs_keys_as_local_files && !var.generate_cert_sign_request_only ? 1 : 0
+  count    = var.generate_certs_keys_as_local_files ? 1 : 0
   content  = tls_private_key.cert_key.private_key_pem
   filename = "./certs/cert-key.pem"
 }
